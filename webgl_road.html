@@ -583,7 +583,7 @@
 				flareA = THREE.ImageUtils.loadTexture( "textures/lensflare2_alpha.png" );
 				flareB = THREE.ImageUtils.loadTexture( "textures/lensflare0_alpha.png" );
 
-				// CARS - VEYRON
+				// CARS - VEYRON 车模型
 
 				veyron = new THREE.Car();
 
@@ -666,7 +666,7 @@
 
 				veyron.loadPartsBinary( "obj/veyron/parts/veyron_body_bin2.js", "obj/veyron/parts/veyron_wheel_bin2.js" );
 
-				// characters
+				// characters 模型人物
 
 				var configBobafett = {
 
@@ -1102,7 +1102,7 @@
 			}
 
 			function onKeyDown ( event ) {
-
+				console.log(characters[0].root.rotation,characters[0].root.positionaw)
 				switch( event.keyCode ) {
 
 					case 38: /*up*/	controls.moveForward = true; break;
@@ -1202,7 +1202,10 @@
 
 			}
 
-			//
+			/**
+			 * 
+			 * 切换视角
+			*/
 
 			function setCurrentObject( name, n ) {
 
@@ -1233,7 +1236,10 @@
 
 			}
 
-			//
+			/**
+			 * 创建马路
+			 * 
+			*/
 
 			function generateRoad ( roadLength, roadWidth, centerWidth, materialRoad, materialCenter ) {
 
@@ -1256,8 +1262,11 @@
 
 			}
 
-			//
-
+			/**
+			 * 人行道
+			 * 
+			*/
+			
 			function generateSidewalk( roadLength, curbWidth, curbHeight, sidewalkWidth, offset, materialGround ) {
 
 				var root = new THREE.Object3D();
@@ -1802,7 +1811,7 @@
 			function animate() {
 
 				requestAnimationFrame( animate );
-
+				
 				render();
 				stats.update();
 
